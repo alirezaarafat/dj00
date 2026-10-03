@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>this is homepage </h1>
+<a href="{% url 'create' %}">add a product </a>
+{% for i in products %}
+<h1>title: {{ i.title }}</h1>
+<p>price: {{ i.price }}</p>
+<p>des: {{ i.description }}</p><br>
+<a href="{% url 'update' i.id %}">update </a><br>
+<a href="{% url 'delete' i.id %}">delete </a>
+
+{% endfor %}
+</body>
+</html>
